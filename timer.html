@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>COUNTDOWN</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<style>
+#demo {
+  text-align: center;
+  font-size: 50px;
+  
+}
+</style>
+</head>
+
+<section class="account-body" style="padding: 5%" style="text-align: center;">
+    <div class="login-myaccount" id ="login-page">
+        <p style="font-size: 50px; text-align: center">REMAINING: </p>
+        <p id="demo"></p>
+        <p style="font-size: 30px; text-align: center">Hãy chờ đợi để thấy điều đặc biệt nhaaa =)))))) </p>
+            <div class="btn" style="text-align: center;">
+            <a href="index.html" class="btn-1" onclick="sessionStorage.clear()">LOG OUT</a><br><br>
+            <i style="font-size: 20px;">Lâu quá thì log out gần tới h vô lại =)))</i><br><br>
+            <i style="font-size: 20px;">Nghe nhạc trong khi đợi nhaaa</i><br><br>
+            <iframe style="display: none;" width="560" height="315" src="https://www.youtube.com/embed/4RiI-JZkeLQ?start=6&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            
+    </div>
+</section>
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Jun 10, 2021 15:50:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = hours + " HOURS "
+  + minutes + " MINUTES " + seconds + " SECONDS ";
+    
+  // If the count down is over, write some text 
+  if (distance <= 1) {
+    document.getElementById("demo").innerHTML =  0 + " HOURS "
+  + 0 + " MINUTES " + 0 + " SECONDS ";
+    location.href = "main.html";
+    clearInterval(x);
+    
+  }
+}, 1000);
+</script>
+
+</body>
+</html>
