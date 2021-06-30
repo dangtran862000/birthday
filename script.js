@@ -18,8 +18,8 @@ function validateForm() {
     }
     if (password=== "") {
         setErrorFor(document.getElementById('password'), 'Password cannot be blank');
-    } else if ((password ==="11062000")){
-        if ((email==="hongnhi")) {
+    } else if ((password ==="29112020")){
+        if ((email==="khanhlinh")) {
             storeInfo();
             document.getElementById('info-page').style.display = 'block';
             document.getElementById('login-page').style.display = 'none';
